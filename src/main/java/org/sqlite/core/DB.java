@@ -695,6 +695,15 @@ public abstract class DB implements Codes
      */
     public abstract int restore(String dbName, String sourceFileName, ProgressObserver observer) throws SQLException;
 
+    /**
+     * @param id The id of the limit.
+     * @param value The new value of the limit.
+     * @return The prior value of the limit
+     * @throws SQLException
+     * @see <a href="https://www.sqlite.org/c3ref/limit.html">https://www.sqlite.org/c3ref/limit.html</a>
+     */
+    public abstract int limit(int id, int value) throws SQLException;
+    
 
     public static interface ProgressObserver
     {

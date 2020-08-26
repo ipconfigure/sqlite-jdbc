@@ -16,10 +16,14 @@
 
 package org.sqlite.core;
 
-import org.sqlite.*;
-
+import org.sqlite.BusyHandler;
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
+
+import org.sqlite.Function;
+import org.sqlite.ProgressHandler;
+import org.sqlite.SQLiteConfig;
+import org.sqlite.SQLiteJDBCLoader;
 
 /** This class provides a thin JNI layer over the SQLite3 C API. */
 public final class NativeDB extends DB
@@ -426,9 +430,6 @@ public final class NativeDB extends DB
      */
     @Override
     native void free_functions();
-
-    @Override
-    public native int limit(int id, int value) throws SQLException;
 
     /**
      * @see org.sqlite.core.DB#backup(java.lang.String, java.lang.String, org.sqlite.core.DB.ProgressObserver)

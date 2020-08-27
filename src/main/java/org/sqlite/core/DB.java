@@ -694,8 +694,8 @@ public abstract class DB implements Codes
      *
      */
     public abstract int restore(String dbName, String sourceFileName, ProgressObserver observer) throws SQLException;
-    
-    
+
+
     public static interface ProgressObserver
     {
         public void progress(int remaining, int pageCount);
